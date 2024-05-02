@@ -5,8 +5,52 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ResidentCalender"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Calender" Height="300" Width="400" FontFamily="Meiryo UI" Loaded="Window_Loaded"
+        ResizeMode="NoResize">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="0.2*"/>
+        </Grid.RowDefinitions>
 
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="lbl_month" Content="XXXX年XX月" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Meiryo UI" FontSize="16"/>
+            <Label x:Name="lbl_previous" Content="&lt;" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Meiryo UI" FontSize="16" MouseDown="lbl_previous_MouseDown" MouseEnter="lbl_previous_next_MouseEnter" MouseLeave="lbl_previous_next_MouseLeave"/>
+            <Label x:Name="lbl_next" Content="&gt;" Grid.Column="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Meiryo UI" FontSize="16" MouseDown="lbl_next_MouseDown" MouseEnter="lbl_previous_next_MouseEnter" MouseLeave="lbl_previous_next_MouseLeave"/>
+        </Grid>
+
+        <Grid x:Name="grid_days" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.8*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="日" Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="10" Background="Transparent" Foreground="Red"/>
+            <Label Content="月" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="10" Background="Transparent" Foreground="Black"/>
+            <Label Content="火" Grid.Column="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="10" Background="Transparent" Foreground="Black"/>
+            <Label Content="水" Grid.Column="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="10" Background="Transparent" Foreground="Black"/>
+            <Label Content="木" Grid.Column="4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="10" Background="Transparent" Foreground="Black"/>
+            <Label Content="金" Grid.Column="5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="10" Background="Transparent" Foreground="Black"/>
+            <Label Content="土" Grid.Column="6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="10" Background="Transparent" Foreground="Red"/>
+        </Grid>
     </Grid>
 </Window>
